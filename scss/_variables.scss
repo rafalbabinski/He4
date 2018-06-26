@@ -1,0 +1,38 @@
+$text-bg-light-color: #ffffff;
+$bg-yellow-color: #FFBE33;
+$text-gray-color: #474747;
+$main-border: 1px solid rgba(#979797, 0.2);
+
+%font-style-small {
+    font-size: 10px;
+    line-height: 15px;
+}
+
+%offer-name-h4 {
+    display: flex;
+    align-items: center;
+    @extend %font-style-small;
+}
+
+%col-vh-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button-select($img) {
+    display: block;
+    height: 20px;
+    width: 25px;
+    background-color: inherit;
+    background-image: url('./../assets/img/#{$img}.png');
+    background-repeat: no-repeat;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background-image: url('./../assets/img/#{$img}hover.png');
+    }
+}

@@ -1,0 +1,288 @@
+@import 'reset';
+@import 'variables';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #e7ecf5;
+    font-family: 'Poppins', sans-serif;
+}
+
+.offer {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    min-height: 110px;
+    margin: 10px auto;
+    padding-top: 17px;
+    padding-bottom: 18px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background: $text-bg-light-color;
+    color: $text-gray-color;
+    box-shadow: 3px 3px 2px rgba(#979797, 0.2);
+}
+
+.offer__name, .offer__price, .offer__history {
+    border-right: $main-border;
+}
+
+// background for .offer__category
+.offer:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 15px;
+    background-color: $bg-yellow-color;  
+}
+
+.offer__category {
+    position: absolute;
+    top: 50%;
+    left: 7.5px;
+    transform:  translateX(-50%) translateY(-50%) rotate(-90deg);
+    @extend %font-style-small;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 1px 1px rgba(153,153,153,0.45);
+    color: $text-bg-light-color;
+}
+
+.offer__name {
+    width: 300px;
+    padding-left: 43px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.offer__title {
+    width: 100%;
+    max-width: 200px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.offer__company:before {
+    content: '';
+    display: block;
+    height: 15px;
+    width: 8px;
+    margin-right: 7px;
+    background: url('./../assets/img/parasol.png') no-repeat center 2px;
+}
+
+.offer__company {
+    margin-top: 5px;
+    @extend %offer-name-h4;
+}
+
+.offer__boost:before {
+    content: '';
+    display: block;
+    height: 7px;
+    width: 7px;
+    margin-right: 7px;
+    border-radius: 50%;
+    background-color: $bg-yellow-color;
+}
+
+.offer__boost {
+    @extend %offer-name-h4;
+    line-height: 14px;
+}
+
+.offer__price {
+    width: 149px;
+    @extend %col-vh-center;
+}
+
+.offer__currency {
+    @extend %font-style-small;
+    text-transform: uppercase;
+}
+
+.offer__history {
+    width: 104px;
+    @extend %col-vh-center;
+}
+
+.offer__value {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.offer__value--red {
+    color: #D83550;
+}
+
+.offer__description {
+    @extend %font-style-small;
+}
+
+.offer__select {
+    width: 109px;
+    padding: 0 17px;
+    @extend %col-vh-center;
+}
+
+.offer__invest {
+    height: 34px;
+    width: 75px;
+    margin-top: 7px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #D22D4F 0%, #F86358 100%);
+    box-shadow: 0 2px 4px 0 rgba(250,91,30,0.34);
+    @extend %font-style-small;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 1px 1px rgba(95,95,95,0.3);
+    color: $text-bg-light-color;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.offer__select-more {
+    width: 100%;
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.offer__view {
+    @include button-select('oko');
+}
+
+.offer__compare {
+    @include button-select('waga');
+}
+
+.offer__view-mobile {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .offer__history--ytd {
+        display: none;
+    }
+}
+
+@media (max-width: 920px) {
+    .offer__history--m30 {
+        display: none;
+    }
+}
+
+@media (max-width: 840px) {
+    .offer__history--m12 {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .offer {
+        max-width: 360px;
+        width: 100%;
+        padding: 13px 15px 15px 35px;
+        min-height: 245px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-content: flex-start;
+    }
+
+    .offer__price {
+        width: 33%;
+    }   
+
+    .offer:before {
+        left: 0;
+    }
+
+    .offer__name {
+        padding: 0;
+        border: none;
+        order: -2;
+    }
+
+    .offer__boost {
+        display: none;
+    }
+
+    .offer__history {
+        min-width: 80px;
+        width: 33%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .offer__history--m1 {
+        border: none;
+    }
+
+    .offer__history--m3 {
+        display: none;
+    }
+
+    .offer__select {
+        order: -1;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 15px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        flex-basis: 100%;
+        border-bottom: 1px solid rgba(#979797, 0.2);
+    }
+
+    .offer__invest {
+        margin-top: 0;
+        height: 34px;
+        width: 100%;
+        max-width: 310px;
+    }
+
+    .offer__select-more {
+        display: none;
+    }
+
+    .offer__view-mobile {
+        display: block;
+        position: absolute;
+        right: 14px;
+        top: 23px;
+    }
+}
+
+@media (max-width: 320px) {
+    .offer__title {
+        max-width: 160px;
+    }
+
+    .offer__price {
+        width: 100%;
+        padding-bottom: 15px;
+        border-right: none;
+    }
+
+    .offer__history {
+        width: 100%;
+        border-top: 1px solid rgba(#979797, 0.2);
+        border-right: none;
+    }
+
+    .offer__history--m1 {
+        padding-bottom: 0;
+    }
+
+    .offer__view-mobile {
+        top: 14px;
+    }
+}
