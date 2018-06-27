@@ -1,5 +1,5 @@
 const offers = [{
-    category: 'Actions',
+    category: 'Altcoins',
     title: 'Ethereum Classic combined with Zcash',
     company: 'Ethereum foundation',
     boostDescription: 'Altcoins - highest growth',
