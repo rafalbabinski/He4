@@ -17,7 +17,7 @@ gulp.task("sass", function() {
             loadMaps: true
         }))
         .pipe(sass({
-            outputStyle: 'compressed',
+            outputStyle: 'extended',
             errLogToConsole: true
         }))
         .pipe(sourcemaps.write())
